@@ -1,0 +1,18 @@
+@import "src/assets/styles/global.scss";
+
+
+:host {
+
+
+  &.<%= classify(name) %>View{
+    .<%= classify(name) %>{
+      &Main{
+        &Pod{}
+      }
+      &Pod{
+        &0{}
+      }
+    }
+  }
+
+}

@@ -1,0 +1,19 @@
+{
+  "name": "@windmillcode/angular-templates",
+  "version": "0.0.27",
+  "peerDependencies": {
+    "@angular/common": "^14.1.0",
+    "@angular/core": "^14.1.0"
+  },
+  "ng-add": {
+    "save": "dependencies"
+  },
+  "schematics": "./schematics/collection.json",
+  "scripts": {
+    "build": "npx ng build && tsc -p tsconfig.schematics.json",
+    "postbuild": "npx copyfiles schematics/collection.json schematics/*/schema.json schematics/*/files/** ../../dist/templates/"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "@windmillcode/profile-detail-card",
+  "version": "0.0.2",
+  "peerDependencies": {
+    "@angular/common": "^14.2.7",
+    "@angular/core": "^14.2.7",
+    "@angular/material": "13.3.9",
+    "@windmillcode/wml-components-base": ">=0.0.4"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

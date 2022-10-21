@@ -1,0 +1,13 @@
+{
+  "name": "@windmillcode/social-media-card",
+  "version": "0.0.4",
+  "peerDependencies": {
+    "@angular/common": "^14.1.3",
+    "@angular/core": "^14.1.3",
+    "@ngx-translate/core": "^14.0.0",
+    "@windmillcode/wml-components-base": "^0.0.3"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

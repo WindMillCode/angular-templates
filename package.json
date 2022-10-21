@@ -1,0 +1,44 @@
+{
+  "name": "windmillcode-templates",
+  "version": "0.0.13",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
+  "private": false,
+  "dependencies": {
+    "@angular/animations": "^14.2.1",
+    "@angular/common": "^14.2.1",
+    "@angular/compiler": "^14.2.1",
+    "@angular/core": "^14.2.1",
+    "@angular/forms": "^14.2.1",
+    "@angular/platform-browser": "^14.2.1",
+    "@angular/platform-browser-dynamic": "^14.2.1",
+    "@angular/router": "^14.2.1",
+    "@ngx-translate/core": "^14.0.0",
+    "@windmillcode/wml-components-base": "^0.0.2",
+    "copyfiles": "^2.4.1",
+    "rxjs": "~7.5.0",
+    "tslib": "^2.3.0",
+    "verdaccio": "^5.13.3",
+    "zone.js": "~0.11.4"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^14.2.2",
+    "@angular/cli": "~14.2.2",
+    "@angular/compiler-cli": "^14.2.1",
+    "@types/jasmine": "~4.0.0",
+    "@windmillcode/angular-templates": "^0.0.18",
+    "jasmine-core": "~4.2.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.0.0",
+    "ng-packagr": "^14.1.0",
+    "typescript": "~4.7.2"
+  }
+}
