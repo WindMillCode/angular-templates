@@ -1,6 +1,6 @@
 {
   "name": "@windmillcode/profile-detail-card",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "peerDependencies": {
     "@angular/common": "^14.2.7",
     "@angular/core": "^14.2.7",

@@ -17,7 +17,7 @@ export class WMLProfileDetailItem extends WMLImage {
 
 }
 @Component({
-  selector: 'lib-profile-detail-card',
+  selector: 'wml-profile-detail-card',
   templateUrl:'./profile-detail-card.html',
   styleUrls:['./profile-detail-card.scss']
 })

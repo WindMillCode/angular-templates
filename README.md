@@ -19,7 +19,7 @@ cd .\projects\social-media-card\;npx ng build;npm version patch;cd ..\..\dist\so
 
 * building wml-notify
 ```ps1
-cd .\projects\wml-notify\;npx ng build;npm version patch;cd ..\..\dist\wml-notify;npm publish --access=public;cd ../..
+cd .\projects\wml-notify\;npm version patch;npx ng build;cd ..\..\dist\wml-notify;npm publish --access=public;cd ../..
 
 ```
 

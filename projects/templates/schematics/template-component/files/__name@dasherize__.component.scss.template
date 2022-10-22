@@ -1,5 +1,6 @@
+<%  if(cpntType !== 'library'){ %>
 @import "src/assets/styles/global.scss";
-
+<% } %>
 
 :host {
 
