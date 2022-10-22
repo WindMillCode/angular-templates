@@ -17,11 +17,14 @@ export function generateComponentTemplate(options:TemplateComponentSchema):Rule{
           dasherize:strings.dasherize,
           name:options.name
         }),
-        move( normalize(`/${options.path}/${strings.dasherize(options.name)}`))        
+        move( normalize(`/${options.path}/${strings.dasherize(options.name)}`))
       ]
     )
     return chain([
-      externalSchematic('@schematics/angular','component',options),
+      externalSchematic('@schematics/angular','component',{
+        ...options,
+        style:"scss"
+      }),
       mergeWith(templateSource,MergeStrategy.Overwrite)
     ])
 

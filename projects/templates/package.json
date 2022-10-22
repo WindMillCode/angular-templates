@@ -1,6 +1,6 @@
 {
   "name": "@windmillcode/angular-templates",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "peerDependencies": {
     "@angular/common": "^14.1.0",
     "@angular/core": "^14.1.0"
