@@ -1,10 +1,13 @@
 // angular
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, OnInit } from '@angular/core';
 
+
+<%  if(cpntType !== 'library'){ %>
 // services
 import { ConfigService } from '@app/core/config/config.service';
 import { UtilityService } from '@app/core/utility/utility.service';
 import { BaseService } from '@core/base/base.service';
+<% } %>
 
 // rxjs
 import { Subject } from 'rxjs';
@@ -24,11 +27,22 @@ export class <%= classify(name) %>Component  {
 
   constructor(
     public cdref:ChangeDetectorRef,
+    <% if(cpntType !== 'library'){ %>
     public utilService:UtilityService,
     public configService:ConfigService,
     public baseService:BaseService
+    <% } %>
   ) { }
+  <% if(cpntType === 'library'){ %>
+  generateClassPrefix(prefix:string) {
+    return (val: string) => {
+      return prefix + val
+    }
+  }
+  classPrefix = this.generateClassPrefix('<%= classify(name) %>')
+  <% } else { %>
   classPrefix = this.utilService.generateClassPrefix('<%= classify(name) %>')
+  <% } %>
   @HostBinding('class') myClass: string = this.classPrefix(`View`);
   ngUnsub= new Subject<void>()
 

@@ -23,6 +23,13 @@
         "$source": "projectName"
       }
 
+    },
+    "cpntType": {
+      "type": "string",
+      "description": "The type of component.",
+      "enum": ["default", "library"],
+      "default": "default"
+
     }
    },
   "required": [
