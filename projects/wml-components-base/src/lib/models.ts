@@ -1,5 +1,17 @@
 import { ChangeDetectorRef, Type } from "@angular/core";
 
+export class WMLEndpoint {
+  constructor(params:Partial<WMLEndpoint>={}){
+    Object.assign(
+      this,
+      {
+        ...params
+      }
+    )
+  }
+  url!:Function 
+  automate =false
+}
 
 
 export class WMLUIProperty{
@@ -11,7 +23,7 @@ export class WMLUIProperty{
       }
     )
   }
-  isPresent:boolean = true 
+  isPresent:boolean = true
   value:string = ""
   class?:string = ""
   style:Partial<CSSStyleDeclaration> = {}
@@ -35,7 +47,7 @@ export class WMLRoute extends WMLUIProperty {
 }
 
 
-export class WMLView extends WMLUIProperty{ 
+export class WMLView extends WMLUIProperty{
   constructor(params:Partial<WMLView> ={}){
     super();
     Object.assign(
@@ -47,7 +59,7 @@ export class WMLView extends WMLUIProperty{
   }
 
   cdref?:ChangeDetectorRef
-  
+
 }
 
 export class WMLWrapper {
@@ -126,5 +138,5 @@ export class WMLAPIPaginationResponseModel  {
   pageNum:number = 0
   pageSize!:number
   totalPages!:number
-  totalItems!:number  
+  totalItems!:number
 }

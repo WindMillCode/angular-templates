@@ -1,6 +1,6 @@
 {
   "name": "@windmillcode/wml-components-base",
-  "version": "0.0.8",
+  "version": "0.0.10",
   "peerDependencies": {
     "@angular/common": "^14.1.0",
     "@angular/core": "^14.1.0"
