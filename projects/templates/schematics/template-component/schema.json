@@ -35,6 +35,12 @@
       "type": "boolean",
       "default": false,
       "x-user-analytics": 15
+    },
+    "styleType": {
+      "type": "string",
+      "description": "preset scss to choose from.",
+      "enum": ["type0", "none"],
+      "default": "type0"
     }
    },
   "required": [

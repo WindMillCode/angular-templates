@@ -8,9 +8,19 @@
   &.<%= classify(name) %>View{
     .<%= classify(name) %>{
       &Main{
-        &Pod{}
+        &Pod{
+<%  if(styleType === 'type0'){ %>@include FlexColumnCenter;<% } %>
+        }
       }
       &Pod{
+        <%  if(styleType === 'type0'){ %>
+        @for $i from 0 through 1 {
+          &#{$i} {
+            width: 100%;
+            max-width: $pageMaxWidth;
+          }
+        }
+        <% } %>
         &0{}
       }
     }
