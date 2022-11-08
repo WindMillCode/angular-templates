@@ -29,7 +29,12 @@
       "description": "The type of component.",
       "enum": ["default", "library"],
       "default": "default"
-
+    },
+    "standalone": {
+      "description": "Whether the generated component is standalone.",
+      "type": "boolean",
+      "default": false,
+      "x-user-analytics": 15
     }
    },
   "required": [

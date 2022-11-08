@@ -8,6 +8,7 @@ type TemplateComponentSchema ={
     cpntType:string,
     path:string,
     project:string
+    standalone:boolean
 }
 export function generateComponentTemplate(options:TemplateComponentSchema):Rule{
   return ()=>{
@@ -26,6 +27,7 @@ export function generateComponentTemplate(options:TemplateComponentSchema):Rule{
     return chain([
       externalSchematic('@schematics/angular','component',{
         name:options.name,
+        standalone:options.standalone,
         path:options.path,
         project:options.project,
         style:"scss"
