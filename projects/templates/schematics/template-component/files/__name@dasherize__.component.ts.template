@@ -15,12 +15,19 @@ import { takeUntil,tap } from 'rxjs/operators';
 
 // misc
 import { ENV } from '@app/core/config/configs';
+<%  if(standalone === true){ %>import { SharedModule } from '@shared/shared.module';<% } %>
 
 @Component({
+  <%  if(standalone === true){ %>standalone:true,
+  imports:[
+    SharedModule
+  ],<% } %>
   selector: '<%= dasherize(name) %>',
   templateUrl: './<%= dasherize(name) %>.component.html',
   styleUrls: ['./<%= dasherize(name) %>.component.scss'],
   changeDetection:ChangeDetectionStrategy.OnPush
+
+
 
 })
 export class <%= classify(name) %>Component  {

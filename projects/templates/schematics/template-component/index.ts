@@ -19,7 +19,8 @@ export function generateComponentTemplate(options:TemplateComponentSchema):Rule{
           classify:strings.classify,
           dasherize:strings.dasherize,
           name:options.name,
-          cpntType:options.cpntType
+          cpntType:options.cpntType,
+          standalone:options.standalone
         }),
         move( normalize(`/${options.path}/${strings.dasherize(options.name)}`))
       ]
