@@ -6,10 +6,11 @@
 
 
   &.<%= classify(name) %>View{
+    display; block;
     .<%= classify(name) %>{
       &Main{
         &Pod{
-<%  if(styleType === 'type0'){ %>@include FlexColumnCenter;<% } %>
+          <%  if(styleType === 'type0'){ %>@include FlexColumnCenter;<% } %>
         }
       }
       &Pod{
