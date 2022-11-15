@@ -6,7 +6,7 @@
 
 
   &.<%= classify(name) %>View{
-    display; block;
+    display: block;
     .<%= classify(name) %>{
       &Main{
         &Pod{

@@ -1,6 +1,6 @@
 // testing
 import { ComponentFixture } from '@angular/core/testing';
-import { configureTestingModuleForComponents, grabComponentInstance, mockTranslateService } from '@app/core/utility/test-utils';
+import { <%  if(standalone === true){ %>configureTestingModuleForStandaloneComponents <% } %> <% else { %>configureTestingModuleForComponents<% } %>, grabComponentInstance, mockTranslateService } from '@app/core/utility/test-utils';
 
 // rxjs
 import { Subject } from 'rxjs';
@@ -13,7 +13,14 @@ describe('<%= classify(name) %>Component', () => {
   let fixture: ComponentFixture<<%= classify(name) %>Component>;
 
   beforeEach(async () => {
-    await configureTestingModuleForComponents(<%= classify(name) %>Component,{mockTranslateService});
+    <%  if(standalone === true){ %>
+    await configureTestingModuleForStandaloneComponents(<%= classify(name) %>Component);
+    <% } %>
+
+    <% else { %>
+    await configureTestingModuleForComponents(<%= classify(name) %>Component);
+    <% } %>
+
     ({fixture, cpnt} =  grabComponentInstance(<%= classify(name) %>Component));
     fixture.detectChanges()
   })
