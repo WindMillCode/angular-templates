@@ -22,10 +22,10 @@ describe('<%= classify(name) %>Component', () => {
 
     it("should create", () => {
       expect(cpnt).toBeTruthy()
-    })  
+    })
 
     it("should have all values initalize properly", () => {
-      expect(cpnt.myClass).toEqual('View')
+      expect(cpnt.myClass).toEqual('<%= classify(name) %>View')
     })
 
     it("should have all properties be the correct class instance", () => {
@@ -39,9 +39,9 @@ describe('<%= classify(name) %>Component', () => {
       spyOn(cpnt.ngUnsub,'next')
       spyOn(cpnt.ngUnsub,'complete')
     })
-    
-    it(` when called | 
-     as appropriate | 
+
+    it(` when called |
+     as appropriate |
      does the required action `,()=>{
         // act
         cpnt.ngOnDestroy();
