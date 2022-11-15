@@ -39,7 +39,7 @@
     "styleType": {
       "type": "string",
       "description": "preset scss to choose from.",
-      "enum": ["type0", "none"],
+      "enum": ["type0","type1", "none"],
       "default": "type0"
     }
    },

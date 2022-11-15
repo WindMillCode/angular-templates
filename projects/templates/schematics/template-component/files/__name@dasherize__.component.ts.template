@@ -47,7 +47,7 @@ export class <%= classify(name) %>Component  {
     }
   }
   classPrefix = this.generateClassPrefix('<%= classify(name) %>')
-  <% } else { %>
+  <% } if(cpntType !== 'library') { %>
   classPrefix = this.utilService.generateClassPrefix('<%= classify(name) %>')
   <% } %>
   @HostBinding('class') myClass: string = this.classPrefix(`View`);
