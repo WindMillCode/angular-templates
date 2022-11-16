@@ -10,8 +10,8 @@
     .<%= classify(name) %>{
       &Main{
         &Pod{
-          <%  if(styleType === 'type0'){ %>@include pageLayout0;<% } %>
-          <%  if(styleType === 'type1'){ %>@include pageLayout1;<% } %>
+          <%  if(styleType === 'type0'){ %>@include MainPodCssRule0;<% } %>
+          <%  if(styleType === 'type1'){ %>@include MainPodCssRule1;<% } %>
         }
       }
       &Pod{
