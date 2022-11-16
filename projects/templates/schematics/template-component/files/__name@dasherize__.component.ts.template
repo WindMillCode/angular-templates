@@ -14,7 +14,7 @@ import { Subject } from 'rxjs';
 import { takeUntil,tap } from 'rxjs/operators';
 
 // misc
-import { ENV } from '@app/core/config/configs';
+import { ENV } from '@env/environment';
 <%  if(standalone === true){ %>import { SharedModule } from '@shared/shared.module';<% } %>
 
 @Component({
