@@ -7,6 +7,7 @@ type TemplateComponentSchema ={
     name:string;
     cpntType:string,
     path:string,
+    styleType:string,
     project:string
     standalone:boolean
 }

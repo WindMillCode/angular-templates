@@ -9,7 +9,7 @@ export class WMLEndpoint {
       }
     )
   }
-  url!:Function 
+  url!:Function
   automate =false
 }
 
@@ -25,6 +25,7 @@ export class WMLUIProperty{
   }
   isPresent:boolean = true
   value:string = ""
+  text?:string = ""
   class?:string = ""
   style:Partial<CSSStyleDeclaration> = {}
   type?:any
@@ -105,6 +106,12 @@ export class WMLCustomComponent {
   }
   cpnt!:Type<any>
   meta:any
+  get params(){
+    return this.meta
+  }
+  set params(value){
+    this.meta = value
+  }
 }
 
 export class WMLImage extends WMLUIProperty {

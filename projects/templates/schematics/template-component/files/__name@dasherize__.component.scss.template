@@ -10,12 +10,12 @@
     .<%= classify(name) %>{
       &Main{
         &Pod{
-          <%  if(styleType === 'type0'){ %>@include MainPodCssRule0;<% } %>
-          <%  if(styleType === 'type1'){ %>@include MainPodCssRule1;<% } %>
+          <%  if(styleType === 'type0' && cpntType !== 'library'){ %>@include MainPodCssRule0;<% } %>
+          <%  if(styleType === 'type1' && cpntType !== 'library'){ %>@include MainPodCssRule1;<% } %>
         }
       }
       &Pod{
-        <%  if(styleType === 'type0'){ %>
+        <%  if(styleType === 'type0' && cpntType !== 'library'){ %>
         @for $i from 0 through 1 {
           &#{$i} {
             width: 100%;
