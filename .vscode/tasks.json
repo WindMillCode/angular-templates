@@ -3,40 +3,31 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "type": "npm",
-      "script": "start",
-      "isBackground": true,
-      "problemMatcher": {
-        "owner": "typescript",
-        "pattern": "$tsc",
-        "background": {
-          "activeOnStart": true,
-          "beginsPattern": {
-            "regexp": "(.*?)"
-          },
-          "endsPattern": {
-            "regexp": "bundle generation complete"
-          }
-        }
+      "label": "package your projects",
+      "type": "shell",
+      "command": "cd .\\projects\\${input:package_your_projects0}\\;npm version ${input:package_your_projects1};npm run build;cd ..\\..\\dist\\${input:package_your_projects0};npm publish;cd ../..",
+
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
       }
     },
+
+  ],
+  "inputs": [
     {
-      "type": "npm",
-      "script": "test",
-      "isBackground": true,
-      "problemMatcher": {
-        "owner": "typescript",
-        "pattern": "$tsc",
-        "background": {
-          "activeOnStart": true,
-          "beginsPattern": {
-            "regexp": "(.*?)"
-          },
-          "endsPattern": {
-            "regexp": "bundle generation complete"
-          }
-        }
-      }
+      "id": "package_your_projects0",
+      "description": "provide an npm package to reninstall",
+      "default": "templates",
+      "type": "promptString"
+    },
+    {
+      "id": "package_your_projects1",
+      "description": "dev install or dev dependency install",
+      "default": "patch",
+      "type": "pickString",
+      "options": ["major", "minor","patch"]
     }
   ]
 }
