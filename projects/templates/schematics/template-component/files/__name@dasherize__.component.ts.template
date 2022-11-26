@@ -78,7 +78,6 @@ export class <%= classify(name) %>Params {
       }
     )
   }
-  limit= Infinity
 }
 <% } %>
 

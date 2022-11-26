@@ -10,7 +10,7 @@ type TemplateComponentSchema ={
     styleType:string,
     project:string
     standalone:boolean,
-    isParamsChild:boolean
+    isParamsChild:string
 }
 export function generateComponentTemplate(options:TemplateComponentSchema):Rule{
   return ()=>{
