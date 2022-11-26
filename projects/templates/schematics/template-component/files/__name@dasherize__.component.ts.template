@@ -50,6 +50,10 @@ export class <%= classify(name) %>Component  {
   <% } if(cpntType !== 'library') { %>
   classPrefix = this.utilService.generateClassPrefix('<%= classify(name) %>')
   <% } %>
+  <%  if(isParamsChild) { %>
+  @Input('params') params: <%= classify(name) %>Params = new <%= classify(name) %>Params()
+  <% } %>
+
   @HostBinding('class') myClass: string = this.classPrefix(`View`);
   ngUnsub= new Subject<void>()
 
@@ -62,3 +66,19 @@ export class <%= classify(name) %>Component  {
   }
 
 }
+
+
+<%  if(isParamsChild) { %>
+export class <%= classify(name) %>Params {
+  constructor(params:Partial<<%= classify(name) %>Params>={}){
+    Object.assign(
+      this,
+      {
+        ...params
+      }
+    )
+  }
+  limit= Infinity
+}
+<% } %>
+

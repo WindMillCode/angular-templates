@@ -30,6 +30,12 @@
       "enum": ["default", "library"],
       "default": "default"
     },
+    "isParamsChild":{
+      "type":"string",
+      "enum": [true,false ],
+      "default":false,
+      "description":"determines wheter the component is present or container if its container it will get a params class as well as a @Input params"
+    },
     "standalone": {
       "description": "Whether the generated component is standalone.",
       "type": "boolean",
