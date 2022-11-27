@@ -1,0 +1,85 @@
+// angular
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, OnInit, <%  if(isParamsChild) { %> Input  <% } %> } from '@angular/core';
+
+
+<%  if(cpntType !== 'library'){ %>
+// services
+import { ConfigService } from '@app/core/config/config.service';
+import { UtilityService } from '@app/core/utility/utility.service';
+import { BaseService } from '@core/base/base.service';
+<% } %>
+
+// rxjs
+import { Subject } from 'rxjs';
+import { takeUntil,tap } from 'rxjs/operators';
+
+// misc
+<%  if(cpntType !== 'library') { %>
+import { ENV } from '@env/environment';
+<% } %>
+<%  if(standalone === true){ %>import { SharedModule } from '@shared/shared.module';<% } %>
+
+@Component({
+  <%  if(standalone === true){ %>standalone:true,
+  imports:[
+    SharedModule
+  ],<% } %>
+  selector: '<%= dasherize(name) %>',
+  templateUrl: './<%= dasherize(name) %>.component.html',
+  styleUrls: ['./<%= dasherize(name) %>.component.scss'],
+  changeDetection:ChangeDetectionStrategy.OnPush
+
+
+
+})
+export class <%= classify(name) %>Component  {
+
+  constructor(
+    public cdref:ChangeDetectorRef,
+    <% if(cpntType !== 'library'){ %>
+    public utilService:UtilityService,
+    public configService:ConfigService,
+    public baseService:BaseService
+    <% } %>
+  ) { }
+  <% if(cpntType === 'library'){ %>
+  generateClassPrefix(prefix:string) {
+    return (val: string) => {
+      return prefix + val
+    }
+  }
+  classPrefix = this.generateClassPrefix('<%= classify(name) %>')
+  <% } if(cpntType !== 'library') { %>
+  classPrefix = this.utilService.generateClassPrefix('<%= classify(name) %>')
+  <% } %>
+  <%  if(isParamsChild) { %>
+  @Input('params') params: <%= classify(name) %>Params = new <%= classify(name) %>Params()
+  <% } %>
+
+  @HostBinding('class') myClass: string = this.classPrefix(`View`);
+  ngUnsub= new Subject<void>()
+
+  ngOnInit(): void {
+  }
+
+  ngOnDestroy(){
+    this.ngUnsub.next();
+    this.ngUnsub.complete()
+  }
+
+}
+
+
+<%  if(isParamsChild) { %>
+export class <%= classify(name) %>Params {
+  constructor(params:Partial<<%= classify(name) %>Params>={}){
+    Object.assign(
+      this,
+      {
+        ...params
+      }
+    )
+  }
+}
+<% } %>
+

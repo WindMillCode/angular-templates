@@ -5,8 +5,7 @@
     {
       "label": "package your projects",
       "type": "shell",
-      "command": "cd .\\projects\\${input:package_your_projects0}\\;npm version ${input:package_your_projects1};npm run build;cd ..\\..\\dist\\${input:package_your_projects0};npm publish;cd ../..",
-
+      "command": "cd .\\angular-work\\projects\\${input:package_your_projects0}\\;npm version ${input:package_your_projects1};npm run build;cd ..\\..\\dist\\${input:package_your_projects0};npm publish;",
       "group": "none",
       "presentation": {
         "reveal": "always",

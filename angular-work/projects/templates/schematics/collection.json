@@ -1,0 +1,26 @@
+{
+  "$schema": "../../../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics":{
+
+    "component":{
+      "description": "Generates template component",
+      "factory": "./template-component/index#generateComponentTemplate",
+      "schema":  "./template-component/schema.json"
+    },
+    "module": {
+      "factory": "./template-module",
+      "description": "Create an template module  usually meant for lib.",
+      "schema": "./template-module/schema.json"
+    },
+    "library": {
+      "description": "Generate template library.",
+      "factory": "./template-library",
+      "schema": "./template-library/schema.json"
+    },
+    "service":{
+      "description": "Generates template service",
+      "factory": "./template-service/index#generateServiceTemplate",
+      "schema":  "./template-service/schema.json"
+    }
+  }
+}

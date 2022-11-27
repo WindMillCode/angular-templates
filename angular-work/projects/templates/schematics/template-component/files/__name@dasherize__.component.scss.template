@@ -1,0 +1,24 @@
+<%  if(cpntType !== 'library'){ %>
+@import "src/assets/styles/global.scss";
+<% } %>
+
+:host {
+
+
+  &.<%= classify(name) %>View{
+    display: block;
+    .<%= classify(name) %>{
+      &Main{
+        &Pod{
+          <%  if(styleType === 'type0' && cpntType !== 'library'){ %>@include MainPodCssRule0;<% } %>
+          <%  if(styleType === 'type1' && cpntType !== 'library'){ %>@include MainPodCssRule1;<% } %>
+        }
+      }
+      &Pod{
+
+        &0{}
+      }
+    }
+  }
+
+}

@@ -1,3 +1,0 @@
-<div [class]="classPrefix('MainPod')">
-  <p><%= dasherize(name) %>  works!</p>
-</div>

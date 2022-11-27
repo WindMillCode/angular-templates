@@ -1,0 +1,24 @@
+import { TranslateModule } from '@ngx-translate/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';<% if (commonModule) { %>
+import { CommonModule } from '@angular/common';<% } %><% if (lazyRouteWithoutRouteModule) { %>
+import { Routes, RouterModule } from '@angular/router';<% } %>
+<% if ((!lazyRoute && routing) || lazyRouteWithRouteModule) { %>
+import { <%= classify(name) %>RoutingModule } from './<%= dasherize(name) %>-routing.module';<% } %>
+<% if (lazyRouteWithoutRouteModule) { %>
+const routes: Routes = [
+  { path: '', component: <%= classify(name) %>Component }
+];<% } %>
+
+@NgModule({
+  declarations: [],
+  imports: [
+    TranslateModule,
+    ReactiveFormsModule,
+    <% if (commonModule) { %>
+    CommonModule<% } %><% if ((!lazyRoute && routing) || lazyRouteWithRouteModule) { %>,
+    <%= classify(name) %>RoutingModule<% } %><% if (lazyRouteWithoutRouteModule) { %>,
+    RouterModule.forChild(routes)<% } %>
+  ]
+})
+export class <%= classify(name) %>Module { }

@@ -1,0 +1,6 @@
+<div [class]="classPrefix('MainPod')">
+  <button [class]="meta.class ?? classPrefix('MainButton0')" (click)="meta.click && meta.click">
+    <img [class]="meta.iconClass" [src]="meta.iconSrc" [alt]="meta.iconAlt"/>
+    <label>{{meta.value | translate}}</label>
+  </button>
+</div>

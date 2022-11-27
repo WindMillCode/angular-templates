@@ -1,0 +1,15 @@
+{
+  "name": "@windmillcode/wml-notify",
+  "version": "0.1.0",
+  "peerDependencies": {
+    "@angular/common": ">14.1.0",
+    "@angular/core": ">14.1.0",
+    "@windmillcode/wml-components-base": ">=0.0.4"
+  },
+  "scripts": {
+    "build": "npx ng build"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

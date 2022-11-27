@@ -1,0 +1,14 @@
+{
+  "name": "<%= dasherize(packageName) %>",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "><%= angularLatestVersion %>",
+    "@angular/core": "><%= angularLatestVersion %>",
+    "@ngx-translate/core": ">14.0.0",
+    "@ngx-translate/http-loader": ">7.0.0"
+  },
+  "dependencies": {
+    "tslib": "^<%= tsLibLatestVersion %>"
+  },
+  "sideEffects": false
+}
