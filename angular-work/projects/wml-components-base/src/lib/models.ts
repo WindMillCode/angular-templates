@@ -1,4 +1,5 @@
 import { ChangeDetectorRef, Type } from "@angular/core";
+import { updateClassString } from "./functions";
 
 export class WMLEndpoint {
   constructor(params:Partial<WMLEndpoint>={}){
@@ -26,7 +27,9 @@ export class WMLUIProperty{
   isPresent:boolean = true
   value:string = ""
   text?:string = ""
-  class?:string = ""
+  class:string = ""
+  private classList:string[] = []
+  updateClassString=updateClassString(this,"class","classList")
   style:Partial<CSSStyleDeclaration> = {}
   type?:any
   click:(evt:Event)=> void = (evt?:Event)=>{
@@ -147,3 +150,5 @@ export class WMLAPIPaginationResponseModel  {
   totalPages!:number
   totalItems!:number
 }
+
+
