@@ -27,9 +27,12 @@ export class WMLUIProperty{
   isPresent:boolean = true
   value:string = ""
   text?:string = ""
-  class:string = ""
-  private classList:string[] = []
-  updateClassString=updateClassString(this,"class","classList")
+  get class(){
+    return this._class
+  }
+  private _class:string = ""
+  private _classList:string[] = []
+  updateClassString=updateClassString(this,"_class","_classList")
   style:Partial<CSSStyleDeclaration> = {}
   type?:any
   click:(evt:Event)=> void = (evt?:Event)=>{
