@@ -2,7 +2,7 @@
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0. but is comptablile as far back as angular 11. this design was remodeled by older code found in this [link](https://tympanus.net/Development/Slicebox/). Remastered for angular w/ additional features. to be used as a carousel
 
-![](docs/promo.gif)
+![](https://github.com/WindMillCode/angular-templates/blob/master/angular-work/projects/wml-slicebox/docs/promo.gif)
 
 
 
