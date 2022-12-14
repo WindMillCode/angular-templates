@@ -9,6 +9,10 @@ This library was generated with [Angular CLI](https://github.com/angular/angular
 
 
 ## Usage
+```shell
+npm install -s @windmillcode/wml-slicebox
+```
+
 * import wml-slicebox into the needed module
 ```ts
 // angular
