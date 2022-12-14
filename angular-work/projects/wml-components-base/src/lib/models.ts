@@ -30,6 +30,9 @@ export class WMLUIProperty{
   get class(){
     return this._class
   }
+  set class(val){
+    this.updateClassString(val)
+  }
   private _class:string = ""
   private _classList:string[] = []
   updateClassString=updateClassString(this,"_class","_classList")

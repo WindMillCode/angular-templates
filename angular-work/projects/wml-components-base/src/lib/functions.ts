@@ -10,7 +10,7 @@ export let addCustomComponent =(vcf:ViewContainerRef,cpnt:Type<any>,meta:any)=>{
 
 export let updateClassString=(obj:any,myClassDefault:string,classListDefault:string)=>{
 
-  return (val:string,type:"add"|"remove"="add")=>{
+  return (val:string,type:"add"|"remove"|"clear"="add")=>{
       let myClass=myClassDefault
       let classList=classListDefault
       if(type === "add"){
@@ -21,6 +21,9 @@ export let updateClassString=(obj:any,myClassDefault:string,classListDefault:str
         .filter((targetClass:string)=>{
           return targetClass !== val
         })
+      }
+      else if(type ==="clear"){
+        obj[classList] = []
       }
       obj[myClass] = obj[classList]
       .reduce((acc:string,x:string)=>{
