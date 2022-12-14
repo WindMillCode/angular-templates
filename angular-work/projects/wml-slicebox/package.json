@@ -1,16 +1,16 @@
 {
   "name": "@windmillcode/wml-slicebox",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "peerDependencies": {
-    "@angular/common": ">13.0.0",
-    "@angular/core": ">13.0.0",
+    "@angular/common": ">11.0.0",
+    "@angular/core": ">11.0.0",
     "rxjs": "~7.5.0",
     "@windmillcode/wml-components-base": ">=0.2.3"
   },
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "homepage": "https://github.com/WindMillCode/angular-templates/tree/master/angular-work/projects",
+  "homepage": "https://github.com/WindMillCode/angular-templates/tree/master/angular-work/projects/wml-slicebox",
   "scripts": {
     "build": "npx ng build"
   },

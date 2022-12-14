@@ -3,9 +3,24 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "Check for angular updates",
+      "type": "shell",
+      "command": "cd .\\angular-work\\; npx ng update",
+
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "promptOnClose": false,
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    },
+    {
       "label": "package your projects",
       "type": "shell",
-      "command": "cd .\\angular-work\\projects\\${input:package_your_projects0}\\;npm version ${input:package_your_projects1};npm run build;cd ..\\..\\dist\\${input:package_your_projects0};npm publish;",
+      "command": "cd .\\angular-work\\projects\\${input:package_your_projects0}\\;npm version ${input:package_your_projects1};npm run build;cd ..\\..\\dist\\${input:package_your_projects0};npm publish --access public;",
       "group": "none",
       "presentation": {
         "reveal": "always",
@@ -17,16 +32,16 @@
   "inputs": [
     {
       "id": "package_your_projects0",
-      "description": "provide an npm package to reninstall",
-      "default": "templates",
+      "description": "provide the package name",
+      "default": "wml-slicebox",
       "type": "promptString"
     },
     {
       "id": "package_your_projects1",
-      "description": "dev install or dev dependency install",
+      "description": "npm version update option",
       "default": "patch",
       "type": "pickString",
       "options": ["major", "minor","patch"]
-    }
+    },
   ]
 }

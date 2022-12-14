@@ -1,3 +1,4 @@
+// @ts-nocheck
 // angular
 import {
   ChangeDetectionStrategy,
@@ -44,12 +45,12 @@ let updateClassString=(obj:any,myClassDefault:string,classListDefault:string)=>{
       }
       else if(type === "remove"){
         obj[classList] = (obj[classList])
-        .filter((myClass)=>{
+        .filter((myClass: string)=>{
           return myClass !== val
         })
       }
       obj[myClass] = obj[classList]
-      .reduce((acc,x,i)=>{
+      .reduce((acc: string,x: string,i: any)=>{
         return acc+ " " +  x
       },"")
     }
@@ -202,7 +203,7 @@ export class WmlSliceboxComponent {
     );
   };
 
-  navigate = (dir: 'next' | 'prev', jumpTo?) => {
+  navigate = (dir: 'next' | 'prev', jumpTo?: number | undefined) => {
     this.stopSlideShowSubj.next()
     if (
       this.checkIfSliceboxCanAnimate()
@@ -258,7 +259,7 @@ export class WmlSliceboxComponent {
       }
 
   };
-  showImageCuboid = (cuboid: WmlSliceboxCuboidParams, imgPos, cuboidSide) => {
+  showImageCuboid = (cuboid: WmlSliceboxCuboidParams, imgPos: number, cuboidSide: number) => {
 
     let sideIdx;
     let item = cuboid.images[imgPos];
@@ -363,8 +364,8 @@ export class WmlSliceboxComponent {
 
   rotateCuboid = (
     cuboid: WmlSliceboxCuboidParams,
-    oneScndBfrCallaback,
-    finishedCallback,
+    oneScndBfrCallaback: { (): void; (arg0: number): void; },
+    finishedCallback: { (pos: any): void; (arg0: number): void; },
     dir?:WmlSliceboxDirection
   ) => {
     cuboid.isRotateComplete = false;
@@ -429,7 +430,7 @@ export class WmlSliceboxComponent {
             this.showImageCuboid(cuboid, cuboid.current.index, 1);
             cuboid.updateClassString('WmlSliceboxPod1Rotate0', 'remove');
           },
-          (pos) => {
+          (pos: number) => {
             if (pos === this.params.cuboidsCount - 1) {
               this.params.isAnimating = false;
               this.startSlideShow().subscribe();
@@ -775,7 +776,7 @@ class WmlSliceboxDefaults {
   current = {
     index: 0,
   };
-  sliceboxSize: {
+  sliceboxSize!: {
     height?: number;
     width?: number;
   };
@@ -784,8 +785,8 @@ class WmlSliceboxDefaults {
   perspective = 10000;
   interval = 3000;
   cuboidsCount = 9;
-  disperseFactor = 20;
-  disperseSpeed;
+  disperseFactor = 40;
+  disperseSpeed:number=4000;
   colorHiddenSides = '#222';
   sequentialFactor = 350;
   speed = 15660;
@@ -794,8 +795,8 @@ class WmlSliceboxDefaults {
   nextRotationDegree?: string;
   prevRotationDegree?:string;
 
-  onBeforeChange = function (position) {};
-  onAfterChange = function (position) {};
+  onBeforeChange = function (position: any) {};
+  onAfterChange = function (position: any) {};
   onReady = function () {};
 
   reverse = false;
@@ -826,15 +827,13 @@ export class WmlSliceboxParams extends WmlSliceboxDefaults {
     height: 500,
     width: 500,
   };
-  _dir:WmlSliceboxDirection
+  _dir!:WmlSliceboxDirection
   resizeDelay = 1000
   isAnimating = false;
   isFinishedResizing =true
   isReady = false;
-  itemsCount: number;
-  animationDuration = 3200;
-  realWidth: '500px';
-  _cuboids: WmlSliceboxCuboidParams[];
+  itemsCount!: number;
+  _cuboids!: WmlSliceboxCuboidParams[];
   moveToNextSlideSubj = new Subject<void>()
   moveToPrevSlideSubj = new Subject<void>()
   jumpToSlideSubj = new Subject<number>()
@@ -851,26 +850,26 @@ class WmlSliceboxCuboidParams extends WmlSliceboxDefaults {
     });
   }
 
-  transitionStartTop;
-  transitionStartLeft;
-  appliedDisperseFactor:number
+  transitionStartTop: string | undefined;
+  transitionStartLeft: string | undefined;
+  appliedDisperseFactor!:number
   class = '';
   classes = [];
   // updateClassString:any=()=>{}
   updateClassString = updateClassString(this, 'class', 'classes');
-  size: {
+  size!: {
     width: number;
     height: number;
   };
   side = 1;
-  pos: number;
-  extra: number;
-  style: Partial<CSSStyleDeclaration>;
+  pos!: number;
+  extra!: number;
+  style!: Partial<CSSStyleDeclaration>;
   isRotateComplete = false;
   isInDispersion = false
-  sidesStyles: { [k: string]: Partial<CSSStyleDeclaration> };
-  o: WmlSliceboxParams['orientation'];
-  direction: 'next' | 'prev';
+  sidesStyles!: { [k: string]: Partial<CSSStyleDeclaration> };
+  o!: WmlSliceboxParams['orientation'];
+  direction!: 'next' | 'prev';
   frontSide = new WMLUIProperty();
   backSide = new WMLUIProperty();
   rightSide = new WMLUIProperty();
